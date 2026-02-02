@@ -12,8 +12,11 @@ public class SelectButtonHandler : MonoBehaviour
     [SerializeField] private Image _selectImage;
     [SerializeField] private GameObject _endBox;
     [SerializeField] private TextMeshProUGUI _endText;
+
     void Update()
     {
+        if (_endBox.activeSelf) return;
+
         // 사람으로 버튼
         if (Keyboard.current != null &&
             Keyboard.current.digit1Key.wasPressedThisFrame)

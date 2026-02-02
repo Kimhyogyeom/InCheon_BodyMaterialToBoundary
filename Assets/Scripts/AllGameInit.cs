@@ -5,6 +5,7 @@ public class AllGameInit : MonoBehaviour
     [SerializeField] private HumanToRobotTransform _humanToRobotTransform;
     [SerializeField] private GaugeWithText _gaugeWithText;
     [SerializeField] private SelectButtonHandler _selectButtonHandler;
+    [SerializeField] private ControlManager _controlManager;
 
     [Header("자동 리셋 설정")]
     [SerializeField] private float autoResetTime = 30f;
@@ -75,5 +76,6 @@ public class AllGameInit : MonoBehaviour
         _humanToRobotTransform.AllInit();
         _gaugeWithText.AllInit();
         _selectButtonHandler.allInit();
+        _controlManager?.ResetAll();
     }
 }
